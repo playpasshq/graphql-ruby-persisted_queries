@@ -10,7 +10,7 @@ require "graphql/persisted_queries/http_method_analyzer"
 module GraphQL
   # Plugin definition
   module PersistedQueries
-    def self.use(schema_defn, options)
+    def self.use(schema_defn, options = {})
       schema = schema_defn.is_a?(Class) ? schema_defn : schema_defn.target
       SchemaPatch.patch(schema)
 
